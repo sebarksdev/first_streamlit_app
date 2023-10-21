@@ -1,4 +1,4 @@
-import streamlit
+rimport streamlit
 import pandas
 import requests
 import snowflake.connector
@@ -29,7 +29,7 @@ streamlit.header('FruityVice Fruit Advice')
 try:
   fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
   if not fruit_choice:
-    streamlit.write('The user entered ', fruit_choice)
+    streamlit.error('Please select a fruit to get info ')
   else:
     fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
     # normalize the data into a table format 
